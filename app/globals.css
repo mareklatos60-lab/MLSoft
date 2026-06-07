@@ -1,0 +1,375 @@
+:root {
+  --text-dark: #0f1f3d;
+  --text-body: #2a3f66;
+  --muted: #5a6f94;
+  --accent: #2f6bff;
+  --bg-light: #e8f2ff;
+  --border: rgba(15, 31, 61, 0.1);
+  --max: 1080px;
+  --hero-copy-width: 46%;
+  --hero-bg-aspect: 1536 / 838;
+  --nav-height: 3.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgb(255 255 255 / 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav__inner {
+  width: min(var(--max), calc(100% - 2rem));
+  margin-inline: auto;
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-nav__logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.site-nav__logo-img {
+  width: auto;
+  height: 2.1rem;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.85rem, 2.5vw, 1.75rem);
+  flex-wrap: wrap;
+}
+
+.site-nav__link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-body);
+  white-space: nowrap;
+}
+
+.site-nav__link:hover {
+  color: var(--accent);
+}
+
+.hero-top {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--hero-bg-aspect);
+  background-color: #d6e8ff;
+  background-image: url("/MLSoft_Hero_Background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.hero-top__overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem);
+}
+
+.hero-top__logo {
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.hero-top__logo-img {
+  width: auto;
+  height: clamp(6.5rem, 14vw, 10.5rem);
+}
+
+.hero-top__copy {
+  margin-top: clamp(1.5rem, 4vh, 2.75rem);
+  max-width: var(--hero-copy-width);
+  padding-right: 1rem;
+}
+
+.hero-top__title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.85rem, 3.2vw, 3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+}
+
+.hero-top__lead {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--text-body);
+  max-width: 52ch;
+}
+
+.main-below {
+  background: var(--bg-light);
+}
+
+.section,
+.hero-top {
+  scroll-margin-top: calc(var(--nav-height) + 0.75rem);
+}
+
+.section {
+  width: min(var(--max), calc(100% - 2rem));
+  margin-inline: auto;
+  padding: 3rem 0;
+}
+
+.section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.why-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.why-tile {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem 1.15rem;
+}
+
+.why-tile h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text-dark);
+}
+
+.why-tile p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.why-tile__emails a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.why-tile__emails a:hover {
+  text-decoration: underline;
+}
+
+.product-panel {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.product-panel--velleo {
+  background: #fcf7f7;
+  border-color: rgb(92 47 103 / 0.22);
+}
+
+.product-panel__velleo-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.product-panel__velleo-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-panel__velleo-media {
+  flex: 0 0 14rem;
+  width: 14rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.65rem;
+  min-height: 0;
+}
+
+.product-panel__velleo-photo-wrap {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 0.65rem;
+  box-shadow: 0 8px 20px rgb(92 47 103 / 0.1);
+}
+
+.product-panel__velleo-photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-panel__velleo-logo {
+  width: min(100%, 11rem);
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.product-panel--velleo p {
+  color: #6b6762;
+  line-height: 1.65;
+}
+
+.product-panel--velleo p + p {
+  margin-top: 1rem;
+}
+
+.product-panel--velleo .btn--primary {
+  background-color: #5c2f67;
+  border-color: #5c2f67;
+  color: #fcf7f7;
+  border-radius: 999px;
+  border-width: 2px;
+}
+
+.product-panel--velleo .btn--primary:hover {
+  background-color: #4a2652;
+  border-color: #4a2652;
+}
+
+.product-panel h3 {
+  margin: 0 0 0.5rem;
+}
+
+.product-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.15rem;
+  border-radius: 0.65rem;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.site-footer__inner {
+  width: min(var(--max), calc(100% - 2rem));
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-panel__velleo-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-panel__velleo-media {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    grid-template-rows: auto auto;
+  }
+
+  .product-panel__velleo-photo-wrap {
+    aspect-ratio: 16 / 10;
+    max-height: 11rem;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --hero-copy-width: 100%;
+  }
+
+  .hero-top {
+    background-position: 72% center;
+  }
+
+  .hero-top__copy {
+    margin-top: clamp(1rem, 3vh, 2rem);
+    padding-right: 0;
+  }
+}
