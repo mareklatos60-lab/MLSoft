@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { SiteNav } from "@/components/site-nav";
+
 const VELLEO_URL = "https://velleo.app";
 
 const WHY_MLSOFT_TILES = [
@@ -38,37 +40,10 @@ const COMPANY_EMAILS = [
   { label: "Contact@Velleo.app", href: "mailto:contact@velleo.app" },
 ] as const;
 
-const NAV_LINKS = [
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Products", href: "#products" },
-  { label: "Why MLSoft", href: "#why-mlsoft" },
-  { label: "Company information", href: "#company-information" },
-] as const;
-
 export default function HomePage() {
   return (
     <>
-      <header className="site-nav">
-        <div className="site-nav__inner">
-          <Link href="#dashboard" className="site-nav__logo" aria-label="MLSoft home">
-            <Image
-              src="/MLSoft_Logo_Design.png"
-              alt="MLSoft"
-              width={160}
-              height={64}
-              priority
-              className="site-nav__logo-img"
-            />
-          </Link>
-          <nav className="site-nav__links" aria-label="Main">
-            {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href} className="site-nav__link">
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </header>
+      <SiteNav />
 
       <section id="dashboard" className="hero-top" aria-label="Introduction">
         <div className="hero-top__overlay">
@@ -179,11 +154,10 @@ export default function HomePage() {
             <article className="why-tile">
               <h3>E-mail</h3>
               <p className="why-tile__emails">
-                {COMPANY_EMAILS.map((email, index) => (
-                  <span key={email.href}>
-                    {index > 0 ? " " : null}
-                    <a href={email.href}>{email.label}</a>
-                  </span>
+                {COMPANY_EMAILS.map((email) => (
+                  <a key={email.href} href={email.href}>
+                    {email.label}
+                  </a>
                 ))}
               </p>
             </article>
