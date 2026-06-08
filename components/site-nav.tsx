@@ -56,10 +56,14 @@ export function SiteNav() {
               className="site-nav__link"
               onClick={() => setOpen(false)}
             >
-              <span className="site-nav__link-short">{link.label}</span>
               {"labelWide" in link ? (
-                <span className="site-nav__link-wide">{link.labelWide}</span>
-              ) : null}
+                <>
+                  <span className="site-nav__link-short">{link.label}</span>
+                  <span className="site-nav__link-wide">{link.labelWide}</span>
+                </>
+              ) : (
+                link.label
+              )}
             </a>
           ))}
         </nav>
