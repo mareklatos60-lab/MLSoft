@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="hero-top__overlay">
           <Link href="/" className="hero-top__logo" aria-label="MLSoft home">
             <Image
-              src="/MLSoft_Logo_Design.png"
+              src="/MLSoft_Logo.png"
               alt="MLSoft"
               width={640}
               height={256}
@@ -152,7 +152,10 @@ export default function HomePage() {
               </article>
             ))}
             <article className="why-tile">
-              <h3>E-mail</h3>
+              <h3>Contact</h3>
+              <p>
+                <a href="tel:+447434101101">07 434 101 101</a>
+              </p>
               <p className="why-tile__emails">
                 {COMPANY_EMAILS.map((email) => (
                   <a key={email.href} href={email.href}>

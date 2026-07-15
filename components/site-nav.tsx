@@ -24,7 +24,7 @@ export function SiteNav() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/MLSoft_Logo_Design.png"
+            src="/MLSoft_Logo.png"
             alt="MLSoft"
             width={160}
             height={64}
